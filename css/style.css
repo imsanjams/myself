@@ -67,6 +67,7 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible; }
+
 #forkongithub a{
   background:#000;
   color:#fff;
@@ -76,12 +77,12 @@ hr {
   font-weight:bold;
   padding:5px 40px;
   font-size:1rem;
-  line-height:2rem;
+  line-height:4rem;
   position:relative;
   transition:0.5s;
 }
 #forkongithub a:hover{
-  background:#8bffff;
+  background: gold;
   color:#141414;
 }
 #forkongithub a::before,#forkongithub a::after{
@@ -105,7 +106,7 @@ hr {
     display:block;
     top:0;
     right:0;
-    width:200px;
+    width:300px;
     overflow:hidden;
     height:200px;
     z-index:9999;
