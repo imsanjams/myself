@@ -77,7 +77,7 @@ hr {
   font-weight:bold;
   padding:5px 40px;
   font-size:1rem;
-  line-height:4rem;
+  line-height:1rem;
   position:relative;
   transition:0.5s;
 }
@@ -95,7 +95,7 @@ hr {
   background:#fff;
 }
 #forkongithub a::after{
-  bottom:1px;
+  bottom:3px;
   top:auto;
 }
 
