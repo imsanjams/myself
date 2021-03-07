@@ -2,22 +2,22 @@ $(function () {
             var mediumPromise = new Promise(function (resolve) {
             var $content = $('#jsonContent');
             var data = {
-                rss: 'https://medium.com/feed/@sabesan96'
+                rss: 'https://medium.com/feed/@imsanjams'
             };
             $.get(' https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40imsanjams', data, function (response) {
                 if (response.status == 'ok') {
                     $("#logo").append(`<img src="${response.feed["image"]}" class="rounded mx-auto d-block">`)
                     var display = '';
                     $.each(response.items, function (k, item) {
-                        display += `<div class="card mb-3 mx-auto mr-5 " style="width: 20rem;">`;
+                        display += `<div class="card mb-3 mx-auto mr-5 " style="width: 50rem;">`;
                         var src = item["thumbnail"]; // use thumbnail url
                         display += `<img src="${src}" class="card-img-top" alt="Cover image">`;
                         display += `<div class="card-body">`;
-                        display += `<h5 class="card-title"><a href="${item.link}">${item.title}</a></h5>`;
+                        display += `<h4 class="card-title"><a href="${item.link}">${item.title}</a></h4>`;
                         var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
                         yourString = yourString.replace('h4', 'p');
                         yourString = yourString.replace('h3', 'p');
-                        var maxLength = 120; // maximum number of characters to extract
+                        var maxLength = 100; // maximum number of characters to extract
                         //trim the string to the maximum length
                         var trimmedString = yourString.substr(0, maxLength);
                         //re-trim if we are in the middle of a word
@@ -37,7 +37,7 @@ $(function () {
 mediumPromise.then(function()
             {
                 //Pagination
-                pageSize = 4;
+                pageSize = 3;
 
                 var pageCount = $(".card").length / pageSize;
 
