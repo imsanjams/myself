@@ -9,14 +9,14 @@ $(function () {
                     $("#logo").append(`<img src="${response.feed["image"]}" class="rounded mx-auto d-block">`)
                     var display = '';
                     $.each(response.items, function (k, item) {
-                        display += `<div class="card mb-3 mx-auto mr-5 " style="width: 45rem;">`;
+                        display += `<div class="card mb-3 mx-auto mr-5 " style="width: 40rem;">`;
                         var src = item["thumbnail"]; // use thumbnail url
                         display += `<img src="${src}" class="card-img-top" alt="Cover image">`;
                         display += `<div class="card-body">`;
                         display += `<h4 class="card-title"><a href="${item.link}">${item.title}</a></h4>`;
                         var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
-                        yourString = yourString.replace('h4', 'p');
                         yourString = yourString.replace('h3', 'p');
+                        yourString = yourString.replace('h2', 'p');
                         var maxLength = 100; // maximum number of characters to extract
                         //trim the string to the maximum length
                         var trimmedString = yourString.substr(0, maxLength);
