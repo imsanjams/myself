@@ -17,7 +17,7 @@ $(function () {
                         var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
                         yourString = yourString.replace('h3', 'p');
                         yourString = yourString.replace('h2', 'p');
-                        var maxLength = 100; // maximum number of characters to extract
+                        var maxLength = 120; // maximum number of characters to extract
                         //trim the string to the maximum length
                         var trimmedString = yourString.substr(0, maxLength);
                         //re-trim if we are in the middle of a word
@@ -26,7 +26,7 @@ $(function () {
                         
                         display += `<a href="${item.link}" target="_blank" class="btn btn-outline-success" >Read More</a>`;
                         display += '</div></div>';
-                        return k < 10;
+                        return k < 20;
                     });
         
                     resolve($content.html(display));
@@ -37,18 +37,18 @@ $(function () {
 mediumPromise.then(function()
             {
                 //Pagination
-                pageSize = 3;
+                pageSize = 4;
 
                 var pageCount = $(".card").length / pageSize;
 
                 for (var i = 0; i < pageCount; i++) {
-                    $("#pagin").append(`<li class="page-item"><a class="page-link" href="#">${(i + 1)}</a></li> `);
+                    $("#pagin").append(`<li class="page-item"><a class="page-link" href="#">${(i + 2)}</a></li> `);
                 }
                 $("#pagin li:nth-child(1)").addClass("active");
                 showPage = function (page) {
                     $(".card").hide();
                     $(".card").each(function (n) {
-                        if (n >= pageSize * (page - 1) && n < pageSize * page)
+                        if (n >= pageSize * (page - 2) && n < pageSize * page)
                             $(this).show();
                     });
                 }
