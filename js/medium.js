@@ -37,18 +37,18 @@ $(function () {
 mediumPromise.then(function()
             {
                 //Pagination
-                pageSize = 4;
+                pageSize = 1;
 
                 var pageCount = $(".card").length / pageSize;
 
                 for (var i = 0; i < pageCount; i++) {
-                    $("#pagin").append(`<li class="page-item"><a class="page-link" href="#">${(i + 2)}</a></li> `);
+                    $("#pagin").append(`<li class="page-item"><a class="page-link" href="#">${(i + 1)}</a></li> `);
                 }
                 $("#pagin li:nth-child(1)").addClass("active");
                 showPage = function (page) {
                     $(".card").hide();
                     $(".card").each(function (n) {
-                        if (n >= pageSize * (page - 2) && n < pageSize * page)
+                        if (n >= pageSize * (page - 1) && n < pageSize * page)
                             $(this).show();
                     });
                 }
